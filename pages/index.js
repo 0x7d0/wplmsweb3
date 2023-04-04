@@ -1,49 +1,36 @@
-import Head from "next/head";
+import React from 'react';
+import Head from 'next/head';
 
-const Home = ({ courses }) => {
+const HomePage = () => {
   return (
-    <>
+    <div className="bg-gray-100 min-h-screen">
       <Head>
-        <title>My Course Platform</title>
-        <meta name="description" content="A headless course platform built with Next.js and WordPress" />
+        <title>My Course</title>
+        <meta name="description" content="Learn Web3 & Cryptocurrencies" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <h1>Featured Courses</h1>
-        <section>
-          {courses.map((course) => (
-            <div key={course.id}>
-              <h2>{course.title}</h2>
-              <p>{course.description}</p>
-            </div>
-          ))}
-        </section>
+      <header className="bg-blue-500 py-6">
+        <div className="container mx-auto px-4">
+          <h1 className="text-4xl font-bold text-white">Learn Web3 & Cryptocurrencies</h1>
+          <p className="text-xl text-white">Unlock the Future of Decentralized Technology</p>
+        </div>
+      </header>
+
+      <main className="container mx-auto px-4 py-12">
+        <h2 className="text-3xl font-semibold mb-4">Course Outline</h2>
+        <ul className="list-disc list-inside">
+          <li className="mb-2">
+            <a href="#" className="text-blue-600 hover:text-blue-800">1. Introduction to Web3 and Cryptocurrencies</a>
+          </li>
+          <li className="mb-2">
+            <a href="#" className="text-blue-600 hover:text-blue-800">2. Blockchain Fundamentals</a>
+          </li>
+          {/* Add more list items here */}
+        </ul>
       </main>
-    </>
+    </div>
   );
 };
 
-export async function getStaticProps() {
-  // Replace this with your actual WordPress API call
-  const courses = [
-    {
-      id: 1,
-      title: "Course 1",
-      description: "This is an example course",
-    },
-    {
-      id: 2,
-      title: "Course 2",
-      description: "This is another example course",
-    },
-  ];
-
-  return {
-    props: {
-      courses,
-    },
-  };
-}
-
-export default Home;
+export default HomePage;
