@@ -2,3 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+.left-sidebar {
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+  }
+  
