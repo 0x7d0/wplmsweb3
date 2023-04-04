@@ -73,76 +73,77 @@ function HomePage() {
                             {child}
                           </a>
                         ))}
-                      </Disclosure.Panel>
-                    </>
-                  )}
-                </Disclosure>
-              ))}
-            </div>
-          </nav>
-
-          <div className="hidden sm:block">
-            <div className="border-b border-gray-200">
-              <nav className="-mb-px flex space-x-8">
-                {navigation.map((item) => (
-                  <Disclosure key={item.name}>
-                    {({ open }) => (
-                      <>
-                        <Disclosure.Button className="w-full flex items-center justify-between">
-                          <a
-                            href={item.href}
-                            className={classNames(
-                              item.current ? 'border-blue-500 text-blue-600' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700',
-                              'group inline-flex items-center py-4 px-1 border-b-2 font-medium text-sm'
-                            )}
-                            aria-current={item.current ? 'page' : undefined}
-                          >
-                            {item.name}
-                          </a>
-                          <ChevronDownIcon
-                            className={classNames(open ? 'text-gray-600' : 'text-gray-400', 'ml-2 h-5 w-5')}
-                            aria-hidden="true"
-                          />
-                        </Disclosure.Button>
-                        <Disclosure.Panel className="space-y-1">
-                          {item.children.map((child) => (
-                            <a
-                              key={child}
-                              href="#"
-                              className="block px-5 py-2 text-base font-medium text-gray-500 hover:text-gray-900"
-                            >
-                              {child}
-                            </a>
-                          ))}
                         </Disclosure.Panel>
                       </>
                     )}
                   </Disclosure>
                 ))}
-              </nav>
+              </div>
+            </nav>
+  
+            <div className="hidden sm:block">
+              <div className="border-b border-gray-200">
+                <nav className="-mb-px flex space-x-8">
+                  {navigation.map((item) => (
+                    <Disclosure key={item.name}>
+                      {({ open }) => (
+                        <>
+                          <Disclosure.Button className="w-full flex items-center justify-between">
+                            <a
+                              href={item.href}
+                              className={classNames(
+                                item.current ? 'border-blue-500 text-blue-600' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700',
+                                'group inline-flex items-center py-4 px-1 border-b-2 font-medium text-sm'
+                              )}
+                              aria-current={item.current ? 'page' : undefined}
+                            >
+                              {item.name}
+                            </a>
+                            <ChevronDownIcon
+                              className={classNames(open ? 'text-gray-600' : 'text-gray-400', 'ml-2 h-5 w-5')}
+                              aria-hidden="true"
+                            />
+                          </Disclosure.Button>
+                          <Disclosure.Panel className="space-y-1">
+                            {item.children.map((child) => (
+                              <a
+                                key={child}
+                                href="#"
+                                className="block px-5 py-2 text-base font-medium text-gray-500 hover:text-gray-900"
+                              >
+                                {child}
+                              </a>
+                            ))}
+                          </Disclosure.Panel>
+                        </>
+                      )}
+                    </Disclosure>
+                  ))}
+                </nav>
+              </div>
             </div>
           </div>
+  
+          <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+            <div className="text-center">
+              <h2 className="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
+                <span className="block">Welcome to</span>
+                <span className="block text-blue-300">Learn Web3 & Cryptocurrencies</span>
+              </h2>
+              <p className="mt-3 max-w-md mx-auto text-base text-white sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+                In the rapidly evolving world of cryptocurrencies and blockchain technology, it's essential to stay
+                up-to-date with the latest trends and developments. Our comprehensive course is designed to provide you
+                with the knowledge and skills you need to navigate the complex world of Web3, digital assets, and
+                decentralized finance with confidence. By taking this course, you'll not only gain a solid understanding
+                of the fundamental concepts but also learn how to put them into practice, enabling you to make informed
+                decisions and seize new opportunities in this exciting space.
+              </p>
+            </div>
+          </main>
         </div>
-
-        <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
-          <div className="text-center">
-            <h2 className="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
-              <span className="block">Welcome to</span>
-              <span className="block text-blue-300">Learn Web3 & Cryptocurrencies</span>
-            </h2>
-            <p className="mt-3 max-w-md mx-auto text-base text-white sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-              In the rapidly evolving world of cryptocurrencies and blockchain technology, it's essential to stay
-              up-to-date with the latest trends and developments. Our comprehensive course is designed to provide you
-              with the knowledge and skills you need to navigate the complex world of Web3, digital assets, and
-              decentralized finance with confidence. By taking this course, you'll not only gain a solid understanding
-              of the fundamental concepts but also learn how to put them into practice, enabling you to make informed
-              decisions and seize new opportunities in this exciting space.
-            </p>
-          </div>
-        </main>
       </div>
-    </div>
-  );
-}
-
-export default HomePage;
+    );
+  }
+  
+  export default HomePage;
+  
